@@ -96,11 +96,11 @@
 
 		// popup
 		function onEachFeature(feature, layer) {
-			if (feature.properties &&  feature.properties["POSTAL"] && feature.properties["P.2006"]) {
+			if (feature.properties &&  feature.properties["POSTAL"] && feature.properties["P.Condo.2010"]) {
 				layer.bindPopup(
 					"<table>" +
 					"<tr class='oddrowcol'><td>POSTAL: </td><td>"+feature.properties["POSTAL"]+"</td></tr>" +
-					"<tr class='evenrowcol'><td>P.2006: </td><td>"+feature.properties["P.2006"]+"</td></tr>" +
+					"<tr class='evenrowcol'><td>P.Condo.2010: </td><td>"+feature.properties["P.Condo.2010"]+"</td></tr>" +
 					"</table>"
 				);
 			}
@@ -118,7 +118,7 @@
 		}			
 		function style1(feature) {
 			return {
-				"color": getValue(feature.properties["P.2006"]),
+				"color": getValue(feature.properties["P.Condo.2010"]),
 
 				"weight": 1, "fillOpacity": 0.5
 			};
@@ -5528,7 +5528,7 @@
 				    var labels = [];
 				    var grades = [0, 390, 560, 735, 991, 57400];
 
-					div.innerHTML += '2006  Median Price ($ in 000s)<br>'
+					div.innerHTML += '2010  Median Price ($ in 000s)<br>'
 					for (var i = 0; i < grades.length-1; i++) { 
 						div.innerHTML +=
 						        '<i style="background:' + getValue(grades[i]+(grades[1]-grades[0])*0.01) + '"></i> ' + 								grades[i] + '&ndash;' + grades[i + 1] + '<br>';
